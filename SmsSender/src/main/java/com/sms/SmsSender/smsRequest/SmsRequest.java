@@ -25,7 +25,6 @@ public class SmsRequest {
     private String recipientPhoneNumber;
 
     @JsonProperty("message")
-//    @Size(min = 1, max = 500, message = "Message character must be between 1 and 500")
     @NotBlank(message = "field message cannot be blank")
     @NotEmpty(message = "field message cannot be empty")
     @Pattern(regexp = MESSAGE_REGEX)
