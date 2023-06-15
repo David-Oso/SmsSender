@@ -21,13 +21,12 @@ public class SmsRequest {
     @NotBlank(message = "field recipient phone number cannot be blank")
     @NotEmpty(message = "field recipient phone number cannot be empty")
     @Pattern(message = "phone number must be a Nigeria phone number starting with +234", regexp = PHONE_NUMBER_REGEX)
+    @Size(min = 14, max = 14, message = "Phone number must not be less or more than 14")
     private String recipientPhoneNumber;
 
-
     @JsonProperty("message")
-    @Size(min = 1, max = 500, message = "Message character must be between 1 and 500")
+//    @Size(min = 1, max = 500, message = "Message character must be between 1 and 500")
     @NotBlank(message = "field message cannot be blank")
-    @NotNull(message = "field message cannot be null")
     @NotEmpty(message = "field message cannot be empty")
     @Pattern(regexp = MESSAGE_REGEX)
     private String message;
